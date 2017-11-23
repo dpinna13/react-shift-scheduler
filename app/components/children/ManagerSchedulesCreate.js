@@ -114,7 +114,7 @@ var ManagerSchedulesCreate = React.createClass({
                                                 
                                                 <td>
                                                     <div className="input-field schedule">
-                                                        <select className="browser-default" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}>
+                                                        <select className="browser-default" name="monday" value={schedules.monday} onChange={this.handleUserChange.bind(this, i)}>
                                                         <option value=""></option>
                                                         <option value="8am-5pm">8am-5pm</option>
                                                         <option value="9am-6pm">9am-6pm</option>
@@ -218,12 +218,10 @@ var ManagerSchedulesCreate = React.createClass({
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <button id={i} className="addSchedule" onClick={this.handleUpdateEmpSchedule.bind(this, i)} className="btn btn-small waves-effect waves-light green accent-3">Save</button>
-                                                    <br/>
-                                                    <button id={i} className="clearSchedule" onClick={this.handleClearEmpSchedule.bind(this, i)} className="btn btn-small waves-effect waves-light green accent-3">Remove</button>
+                                                    <button id={i} className="addSchedule" onClick={this.handleUpdateEmpSchedule.bind(this, i)} className="btn btn-small waves-effect waves-light green"><i className="material-icons">save</i></button>
                                                 </td>
                                                 <td>
-                                                    
+                                                    <button id={i} className="clearSchedule" onClick={this.handleClearEmpSchedule.bind(this, i)} className="btn btn-small waves-effect waves-light teal"><i className="material-icons">delete</i></button>
                                                 </td>
                                             </tr>
                                         );

@@ -27,8 +27,10 @@ var Manager = React.createClass({
                     <span className="left"></span>
                     </a>
                     <ul className="right">
-                        <li><a className="black-text" href="/manager/employeeAll">Employee Management<i className="material-icons right">group</i></a></li>
-                        <li><a className="black-text" href="/manager/schedulesCreate">Schedules<i className="material-icons right">access_time</i></a></li>
+                        <li><a className="black-text hide-on-small-only show-on-large" href="/manager/employeeAll">Employee Management<i className="material-icons right">group</i></a></li>
+                        <li><a className="black-text show-on-small hide-on-med-and-up" href="/manager/employeeAll"><i className="material-icons right">group</i></a></li>
+                        <li><a className="black-text hide-on-small-only show-on-large" href="/manager/schedulesCreate">Schedules<i className="material-icons right">access_time</i></a></li>
+                        <li><a className="black-text show-on-small hide-on-med-and-up" href="/manager/schedulesCreate"><i className="material-icons right">access_time</i></a></li>
                         <li><a className="black-text right" href="/logout">Logout</a></li>
                     </ul>
                 </div>
