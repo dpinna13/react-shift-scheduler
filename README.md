@@ -1,9 +1,7 @@
 # ![Icon](https://raw.githubusercontent.com/clsavino/react-shift-scheduler/master/public/assets/images/logo-small.png) Schedulr
-Schedulr is an employee management and scheduling app that allows…
-* Managers to manage and schedule employees
-* Employees to view work schedules
-
-View app live on [Heroku](https://reactschedulr.herokuapp.com)
+Schedulr is a time and schedule management web-app that allows:
+* admin to manage and users' schedule
+* users to view their schedules
 
 ## Run locally
 Install dependencies
@@ -17,18 +15,22 @@ webpack
 ```
 Re-execute this command every time you modified any html or .js
 
+Start mongodb
+```shell
+mongod --config /usr/local/etc/mongod.conf
+```
+or 
+```shell
+brew services start mongodb
+```
+
+
 Start the server
 ```shell
 node server.js
 ```
 
 Open a browser and go to [http://localhost:8080](http://localhost:8080)
-
-## Team
-* Andrea Roche [@amr08](https://github.com/amr08)
-* Christi Savino [@clsavino](https://github.com/clsavino)
-* Houston Breedlove [@hcbreedl](https://github.com/hcbreedl)
-* Nicolás Cáceres [@mr-attack](https://github.com/mr-attack)
 
 ## Tech
 Built with React, Node, Express, MongoDB, Passport.js
