@@ -15,11 +15,11 @@ var EmployeeHome = React.createClass({
         this.getAnnouncements();
     },
 
-    // componentDidUpdate: function(prevState) {
-    //     if (prevState.title !== this.state.title || prevState.content !== this.state.content) {
-    //         this.getAnnouncements();
-    //     }
-    // },
+    componentDidUpdate: function(prevState) {
+        if (prevState.title !== this.state.title || prevState.content !== this.state.content) {
+            this.getAnnouncements();
+        }
+    },
 
     getAnnouncements: function() {
         helpers.getAnnouncements().then(function(response) {

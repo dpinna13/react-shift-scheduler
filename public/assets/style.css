@@ -1,9 +1,11 @@
-.brand-logo {
+.logo {
 	margin-left: 20px;
-}
-
-.brand-logo:hover {
-	border-bottom: 3px solid #1e88e5;
+	position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    padding: 0;
+    white-space: nowrap
 }
 
 #logo {
@@ -17,6 +19,11 @@
 
 #google {
 	background-color: #ea4335;
+}
+
+#logout {
+	float: right;
+	margin-right: 20px;
 }
 
 #linkedin {

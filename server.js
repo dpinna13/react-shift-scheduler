@@ -5,8 +5,8 @@
   var passport = require("passport");
   var LocalStrategy= require("passport-local");
   var passportLocalMongoose = require("passport-local-mongoose");
-  var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
-  var LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
+  // var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy;
+  // var LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
   var path = require("path");
   var db = require("./db/db.js")
   var User = require("./models/user")
@@ -52,86 +52,86 @@
   app.use(express.static(__dirname + "/public"))
 
 //GOOGLE AUTH
-  app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+  // app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-  app.get('/auth/google/callback',
-    passport.authenticate('google', {
-      failureRedirect: '/'
-    }),
-    function(req, res) {
-      res.redirect('/employee');
-    });
+  // app.get('/auth/google/callback',
+  //   passport.authenticate('google', {
+  //     failureRedirect: '/'
+  //   }),
+  //   function(req, res) {
+  //     res.redirect('/employee');
+  //   });
 
-  if (process.env.GOOGLE_CLIENT_ID) passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: process.env.GOOGLE_CALLBACK_URL
-  },
-    function(accessToken, refreshToken, profile, done) {
-      User.findOne({ "username" : profile.displayName, "email" :profile.emails[0].value }, function (err, user) {
-        console.log("Current user already stored = " + user)
-        if(err)
-          return done(err);
-        if(user) {
-          return done(null, user);
-        } else {
-            var newUser = new User();
-            newUser.username = profile.displayName;
-            newUser.email = profile.emails[0].value
-            newUser.userType = "employee";
-            console.log("Storing new user to DB")
+  // if (process.env.GOOGLE_CLIENT_ID) passport.use(new GoogleStrategy({
+  //   clientID: process.env.GOOGLE_CLIENT_ID,
+  //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  //   callbackURL: process.env.GOOGLE_CALLBACK_URL
+  // },
+  //   function(accessToken, refreshToken, profile, done) {
+  //     User.findOne({ "username" : profile.displayName, "email" :profile.emails[0].value }, function (err, user) {
+  //       console.log("Current user already stored = " + user)
+  //       if(err)
+  //         return done(err);
+  //       if(user) {
+  //         return done(null, user);
+  //       } else {
+  //           var newUser = new User();
+  //           newUser.username = profile.displayName;
+  //           newUser.email = profile.emails[0].value
+  //           newUser.userType = "employee";
+  //           console.log("Storing new user to DB")
 
-            newUser.save(function(err) {
-              if (err)
-                 throw err;
-              return done(null, newUser);
-            });
-        }
-      });
-    }
-  ));
+  //           newUser.save(function(err) {
+  //             if (err)
+  //                throw err;
+  //             return done(null, newUser);
+  //           });
+  //       }
+  //     });
+  //   }
+  // ));
 
 //LINKED IN AUTH
-  app.get('/auth/linkedin', passport.authenticate('linkedin', {
-     failureRedirect: '/',
-     scope: ['r_emailaddress', 'r_basicprofile']
-  }));
+  // app.get('/auth/linkedin', passport.authenticate('linkedin', {
+  //    failureRedirect: '/',
+  //    scope: ['r_emailaddress', 'r_basicprofile']
+  // }));
 
-  app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
-    successRedirect: '/employee',
-    failureRedirect: '/'
-  }));
+  // app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
+  //   successRedirect: '/employee',
+  //   failureRedirect: '/'
+  // }));
 
-  passport.use(new LinkedInStrategy({
-    clientID: process.env.LINKEDIN_ID,
-    clientSecret: process.env.LINKEDIN_SECRET,
-    callbackURL: process.env.LINKEDIN_CALLBACK,
-    state: true
-  },
-    function(accessToken, refreshToken, profile, done) {
-    console.log(profile.photos[0].value)
-      User.findOne({ "username": profile.name.givenName, "email": profile.emailAddress }, function (err, user) {
-        console.log("Current user already stored = " + user)
-        if(err)
-          return done(err);
-        if(user) {
-          return done(null, user);
-        } else {
-            var newUser = new User();
-            newUser.username = profile.name.givenName;
-            newUser.email = profile.emailAddress;
-            newUser.userType = "employee";
-            newUser.picture = profile.photos[0].value;
-            console.log("Storing new user to DB")
+  // passport.use(new LinkedInStrategy({
+  //   clientID: process.env.LINKEDIN_ID,
+  //   clientSecret: process.env.LINKEDIN_SECRET,
+  //   callbackURL: process.env.LINKEDIN_CALLBACK,
+  //   state: true
+  // },
+  //   function(accessToken, refreshToken, profile, done) {
+  //   console.log(profile.photos[0].value)
+  //     User.findOne({ "username": profile.name.givenName, "email": profile.emailAddress }, function (err, user) {
+  //       console.log("Current user already stored = " + user)
+  //       if(err)
+  //         return done(err);
+  //       if(user) {
+  //         return done(null, user);
+  //       } else {
+  //           var newUser = new User();
+  //           newUser.username = profile.name.givenName;
+  //           newUser.email = profile.emailAddress;
+  //           newUser.userType = "employee";
+  //           newUser.picture = profile.photos[0].value;
+  //           console.log("Storing new user to DB")
 
-            newUser.save(function(err) {
-              if (err)
-                throw err;
-              return done(null, newUser);
-            });
-        }
-      });
-  }));
+  //           newUser.save(function(err) {
+  //             if (err)
+  //               throw err;
+  //             return done(null, newUser);
+  //           });
+  //       }
+  //     });
+  // }));
 
 //LOCAL AUTH
   app.post("/register", function(req, res) {

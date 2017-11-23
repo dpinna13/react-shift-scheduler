@@ -17,6 +17,6 @@
     console.log("Mongoose Error: ", err);
   });
 
-  db.once("open", function() {
+  db.once("openUri", function() {
     console.log("Mongoose connection successful.");
   });

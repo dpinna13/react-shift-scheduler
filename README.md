@@ -15,6 +15,7 @@ Build the bundle
 ```shell
 webpack
 ```
+Re-execute this command every time you modified any html or .js
 
 Start the server
 ```shell

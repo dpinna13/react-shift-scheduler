@@ -73,11 +73,11 @@
     employee.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      addressOne: req.body.addressOne,
-      addressTwo: req.body.addressTwo,
-      city: req.body.city,
-      state: req.body.state,
-      zip: req.body.zip,
+      // addressOne: req.body.addressOne,
+      // addressTwo: req.body.addressTwo,
+      // city: req.body.city,
+      // state: req.body.state,
+      // zip: req.body.zip,
       email: req.body.email,
       phone: req.body.phone,
       phoneType: req.body.phoneType
@@ -96,11 +96,11 @@
      employee.findOneAndUpdate({ "_id": req.params.id }, {
          firstName: req.body.firstName,
          lastName: req.body.lastName,
-         addressOne: req.body.addressOne,
-         addressTwo: req.body.addressTwo,
-         city: req.body.city,
-         state: req.body.state,
-         zip: req.body.zip,
+         // addressOne: req.body.addressOne,
+         // addressTwo: req.body.addressTwo,
+         // city: req.body.city,
+         // state: req.body.state,
+         // zip: req.body.zip,
          email: req.body.email,
          phone: req.body.phone,
          phoneType: req.body.phoneType
