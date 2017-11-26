@@ -43,11 +43,11 @@ var helper = {
     return axios.post("/addEmployee", {
         firstName: firstName,
         lastName: lastName,
-        addressOne: addressOne,
-        addressTwo: addressTwo,
-        city: city,
-        state: state,
-        zip: zip,
+        // addressOne: addressOne,
+        // addressTwo: addressTwo,
+        // city: city,
+        // state: state,
+        // zip: zip,
         email: email,
         phone: phone,
         phoneType: phoneType });
@@ -57,11 +57,11 @@ var helper = {
        return axios.put("/updateEmployee/" + id, {
            firstName: firstName,
            lastName: lastName,
-           addressOne: addressOne,
-           addressTwo: addressTwo,
-           city: city,
-           state: state,
-           zip: zip,
+           // addressOne: addressOne,
+           // addressTwo: addressTwo,
+           // city: city,
+           // state: state,
+           // zip: zip,
            email: email,
            phone: phone,
            phoneType: phoneType
