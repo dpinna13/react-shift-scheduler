@@ -3,8 +3,19 @@ Schedulr is a time and schedule management web-app that allows:
 * admin to manage and users' schedule
 * users to view their schedules
 
+## Minimum requirement
+
+(https://askubuntu.com/questions/786272/why-does-installing-node-6-x-on-ubuntu-16-04-actually-install-node-4-2-6) Ensure you've got Node.js latest version
+
+sudo apt install npm mongo cmdtest
+npm install --save-dev webpack
+
+To correctly install yarn in ubuntu: 
+(https://yarnpkg.com/lang/en/docs/install/#linux-tab) Yarn documentation
+
 ## Run locally
 Install dependencies
+
 ```shell
 npm install
 ```

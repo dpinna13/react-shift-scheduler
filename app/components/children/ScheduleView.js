@@ -5,14 +5,26 @@ var ScheduleView = React.createClass({
 
     getInitialState: function() {
         return {
-            empSchedules: []
+            empSchedules: [],
+            phone: ""
         };
     },
+
 
     componentDidMount: function() {
         helpers.getEmpSchedules().then(function(response) {
             if (response !== this.state.empSchedules) {
+              console.log(response)
                 this.setState({ empSchedules: response.data });
+            }
+        }.bind(this));
+        this.getEmployees();
+    },
+    getEmployees: function() {
+        helpers.getAllEmployees().then(function(response) {
+            if (response !== this.state.allEmployees) {
+                this.setState({ allEmployees: response.data });
+                this.activeButtons();
             }
         }.bind(this));
     },
@@ -26,10 +38,10 @@ var ScheduleView = React.createClass({
                         <div className="row">
                                     {this.state.empSchedules.map(function(schedules, i) {
                                         return (
-                                        <div className="col s12 m6">
+                                        <div key={i} className="col s12 m6">
                                         <div className="card blue-grey darken-1">
-                                            <div key={i} className="card-content white-text">
-                                                <span className="card-title fullName">                                        
+                                            <div className="card-content white-text">
+                                                <span className="card-title fullName">
                                                 {schedules.firstName} {schedules.lastName}
                                                 </span>
                                                 <ul>
@@ -43,13 +55,16 @@ var ScheduleView = React.createClass({
                                                 </ul>
                                             </div>
                                             <div className="card-action">
-                                                    <a href="sms:+447412285743">Send Text Message</a>
-                                              </div>
+                                            {this.state.getEmployee.map(function(empData, i) {
+                                              return (
+                                                    <a href="sms:{this.state.empData.phone}">Send Text Message</a>
+                                                  );
+                                            }, this)}
+                                            </div>
                                         </div>
-                                        </div>
+                                    </div>
                                     );
-                                }, this)}    
-                            
+                                }, this)}
                         </div>
                     </div>
                 </div>
@@ -57,5 +72,5 @@ var ScheduleView = React.createClass({
         );
     }
 });
-
+// https://stackoverflow.com/questions/29218378/mobile-website-whatsapp-button-to-send-message-to-a-specific-number
 module.exports = ScheduleView;

@@ -110,23 +110,31 @@ var ManagerSchedulesCreate = React.createClass({
                                                     {schedules.firstName} {schedules.lastName}
                                                 </td>
                                                 <td>
+                                                  <div className="">
+                                                    <select className="browser-default" name="monday" value={schedules.monday} onChange={this.handleUserChange.bind(this, i)}>
+                                                      <option disabled defaultValue>Select shift</option>
+                                                      <option value="Libero" defaultValue>Libero</option>
+                                                      <option disabled>Feriali</option>
+                                                      <option value="8-14">8 - 14</option>
+                                                      <option value="14-20">14 - 20</option>
+                                                      <option value="20-8">20 - 8</option>
+                                                      <option disabled>Festivi</option>
+                                                      <option value="8-20">8 - 20</option>
+                                                      <option value="20-8">20 - 8</option>
+                                                    </select>
+                                                  </div>
+                                                </td>
+                                                <td>
                                                     <div className="input-field schedule">
                                                         <form className="browser-default">
-                                                            <input type="text" name="monday" value={schedules.monday} onChange={this.handleUserChange.bind(this, i)}></input>
+                                                            <input type="text" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}></input>
                                                         </form>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="input-field schedule">
                                                         <form className="browser-default">
-                                                            <input type="text" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}></input>   
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div className="input-field schedule">
-                                                        <form className="browser-default">
-                                                            <input type="text" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}></input>   
+                                                            <input type="text" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}></input>
                                                         </form>
                                                     </div>
                                                 </td>
