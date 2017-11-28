@@ -62,7 +62,7 @@ var ManagerSchedulesCreate = React.createClass({
         let updatedEmpSchedules = this.state.empSchedules.map((empSchedule, j) => {
             if(i === j){
                 var saveButton = document.getElementById(i);
-                saveButton.innerHTML = "";
+                // saveButton.innerHTML = "";
                 saveButton.className = "btn btn-small waves-effect waves-light blue accent-3";
 
                 empSchedule.monday = "";
@@ -89,6 +89,11 @@ var ManagerSchedulesCreate = React.createClass({
                     <div className="col m12" >
                         <div className="section">
                             <h5>Schedule Editor</h5>
+                            <div className="row">
+                                <div className="col m12 grey" >
+                                    <h6>Week 1</h6>
+                                  </div>
+                                </div>
                             <table className="highlight">
                                 <thead>
                                     <tr>
@@ -102,6 +107,7 @@ var ManagerSchedulesCreate = React.createClass({
                                         <th data-field="name">Sunday</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     {this.state.empSchedules.map(function(schedules, i) {
                                         return (
@@ -112,101 +118,94 @@ var ManagerSchedulesCreate = React.createClass({
                                                 <td>
                                                   <div className="">
                                                     <select className="browser-default" name="monday" value={schedules.monday} onChange={this.handleUserChange.bind(this, i)}>
-                                                      <option disabled defaultValue>Select shift</option>
                                                       <option value="Libero" defaultValue>Libero</option>
                                                       <option disabled>Feriali</option>
-                                                      <option value="8-14">8 - 14</option>
-                                                      <option value="14-20">14 - 20</option>
-                                                      <option value="20-8">20 - 8</option>
+                                                      <option value="8 - 14">8 - 14</option>
+                                                      <option value="14 - 20">14 - 20</option>
+                                                      <option value="20 - 8">20 - 8</option>
                                                       <option disabled>Festivi</option>
-                                                      <option value="8-20">8 - 20</option>
-                                                      <option value="20-8">20 - 8</option>
+                                                      <option value="8 - 20">8 - 20</option>
+                                                      <option value="20 - 8">20 - 8</option>
                                                     </select>
                                                   </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}>
-                                                            <option disabled defaultValue>Select shift</option>
                                                             <option value="Libero" defaultValue>Libero</option>
                                                             <option disabled>Feriali</option>
-                                                            <option value="8-14">8 - 14</option>
-                                                            <option value="14-20">14 - 20</option>
-                                                            <option value="20-8">20 - 8</option>
+                                                            <option value="8 - 14">8 - 14</option>
+                                                            <option value="14 - 20">14 - 20</option>
+                                                            <option value="20 - 8">20 - 8</option>
                                                             <option disabled>Festivi</option>
-                                                            <option value="8-20">8 - 20</option>
-                                                            <option value="20-8">20 - 8</option>
+                                                            <option value="8 - 20">8 - 20</option>
+                                                            <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="wednesday" value={schedules.wednesday} onChange={this.handleUserChange.bind(this, i)}>
-                                                          <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Feriali</option>
-                                                          <option value="8-14">8 - 14</option>
-                                                          <option value="14-20">14 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 14">8 - 14</option>
+                                                          <option value="14 - 20">14 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                           <option disabled>Festivi</option>
-                                                          <option value="8-20">8 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 20">8 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="thursday" value={schedules.thursday} onChange={this.handleUserChange.bind(this, i)}>
-                                                          <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Feriali</option>
-                                                          <option value="8-14">8 - 14</option>
-                                                          <option value="14-20">14 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 14">8 - 14</option>
+                                                          <option value="14 - 20">14 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                           <option disabled>Festivi</option>
-                                                          <option value="8-20">8 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 20">8 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="friday" value={schedules.friday} onChange={this.handleUserChange.bind(this, i)}>
-                                                          <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Feriali</option>
-                                                          <option value="8-14">8 - 14</option>
-                                                          <option value="14-20">14 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 14">8 - 14</option>
+                                                          <option value="14 - 20">14 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                           <option disabled>Festivi</option>
-                                                          <option value="8-20">8 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 20">8 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="saturday" value={schedules.saturday} onChange={this.handleUserChange.bind(this, i)}>
-                                                          <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Feriali</option>
-                                                          <option value="8-14">8 - 14</option>
-                                                          <option value="14-20">14 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 14">8 - 14</option>
+                                                          <option value="14 - 20">14 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                           <option disabled>Festivi</option>
-                                                          <option value="8-20">8 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 20">8 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
                                                         <select className="browser-default" name="sunday" value={schedules.sunday} onChange={this.handleUserChange.bind(this, i)}>
-                                                          <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Festivi</option>
-                                                          <option value="8-20">8 - 20</option>
-                                                          <option value="20-8">20 - 8</option>
+                                                          <option value="8 - 20">8 - 20</option>
+                                                          <option value="20 - 8">20 - 8</option>
                                                         </select>
                                                     </div>
                                                 </td>

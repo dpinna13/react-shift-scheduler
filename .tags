@@ -1,3 +1,13 @@
+React	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^var React = require("react");$/;"	variable	line:1
+helpers	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^var helpers = require("..\/utils\/helpers");$/;"	variable	line:2
+getInitialState	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    getInitialState: function() {$/;"	function	line:6
+componentDidMount	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    componentDidMount: function() {$/;"	function	line:23
+handleUserChange	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    handleUserChange: function(index, event) {$/;"	function	line:31
+handleUpdateEmpSchedule	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    handleUpdateEmpSchedule: function(event) {$/;"	function	line:44
+handleClearEmpSchedule	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    handleClearEmpSchedule: function(i,event) {$/;"	function	line:58
+clearStates	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    clearStates: function() {$/;"	function	line:82
+render	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^    render: function() {$/;"	function	line:86
+ManagerSchedulesCreate	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ManagerSchedulesCreate.js	/^var ManagerSchedulesCreate = React.createClass({$/;"	variable	line:4
 React	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ScheduleView.js	/^var React = require("react");$/;"	variable	line:1
 helpers	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ScheduleView.js	/^var helpers = require("..\/utils\/helpers");$/;"	variable	line:2
 getInitialState	/Users/diego/Documents/GitHub/react-shift-scheduler/app/components/children/ScheduleView.js	/^  getInitialState: function() {$/;"	function	line:6
