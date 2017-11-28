@@ -6,14 +6,8 @@ var ManagerEmployeeAll = React.createClass({
         return {
             firstName: "",
             lastName: "",
-            // addressOne: "",
-            // addressTwo: "",
-            // city: "",
-            // state: "",
-            // zip: "",
             email: "",
             phone: "",
-            phoneType: "",
             allEmployees: [],
             selectedEmployee: "",
             emp_id: ""
@@ -40,16 +34,11 @@ var ManagerEmployeeAll = React.createClass({
     handleAddForm: function(event) {
         event.preventDefault();
         helpers.addEmployee(
-            this.state.firstName, 
-            this.state.lastName, 
-            // this.state.addressOne, 
-            // this.state.addressTwo, 
-            // this.state.city, 
-            // this.state.state, 
-            // this.state.zip, 
-            this.state.email, 
-            this.state.phone, 
-            this.state.phoneType).then(function(response) {
+            this.state.firstName,
+            this.state.lastName,
+            this.state.email,
+            this.state.phone
+          ).then(function(response) {
             this.state.emp_id = response.data._id;
 
             helpers.addEmpSchedule(this.state.emp_id, this.state.firstName, this.state.lastName).then(function(response) {
@@ -65,17 +54,12 @@ var ManagerEmployeeAll = React.createClass({
     handleUpdateForm: function(event) {
         event.preventDefault();
         helpers.updateEmployee(
-            this.state.selectedEmployee, 
-            this.state.firstName, 
-            this.state.lastName, 
-            // this.state.addressOne, 
-            // this.state.addressTwo, 
-            // this.state.city, 
-            // this.state.state,
-            // this.state.zip,
-            this.state.email, 
-            this.state.phone, 
-            this.state.phoneType).then(function(response) {
+            this.state.selectedEmployee,
+            this.state.firstName,
+            this.state.lastName,
+            this.state.email,
+            this.state.phone
+          ).then(function(response) {
         }.bind(this));
 
         helpers.updateEmpName(this.state.emp_id, this.state.firstName, this.state.lastName).then(function(response) {
@@ -105,14 +89,8 @@ var ManagerEmployeeAll = React.createClass({
                     this.setState({
                         firstName: this.state.allEmployees[i].firstName,
                         lastName: this.state.allEmployees[i].lastName,
-                        // addressOne: this.state.allEmployees[i].addressOne,
-                        // addressTwo: this.state.allEmployees[i].addressTwo,
-                        // city: this.state.allEmployees[i].city,
-                        // state: this.state.allEmployees[i].state,
-                        // zip: this.state.allEmployees[i].zip,
                         email: this.state.allEmployees[i].email,
                         phone: this.state.allEmployees[i].phone,
-                        phoneType: this.state.allEmployees[i].phoneType,
                         emp_id: this.state.selectedEmployee
                     });
                     this.activeButtons();
@@ -140,17 +118,11 @@ var ManagerEmployeeAll = React.createClass({
 
     clearStates: function() {
         this.setState(
-            { 
-                firstName: "", 
-                lastName: "", 
-                // addressOne: "", 
-                // addressTwo: "", 
-                // city: "", 
-                // state: "", 
-                // zip: "", 
-                email: "", 
-                phone: "", 
-                phoneType: "", 
+            {
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
                 selectedEmployee: ""
             });
     },
@@ -158,13 +130,13 @@ var ManagerEmployeeAll = React.createClass({
     activeButtons: function() {
         // don't allow updating or removing on empty form
         if (this.state.selectedEmployee == "") {
-            document.getElementById("addEmployee").className = "btn btn-large waves-effect waves-light green accent-3";
+            document.getElementById("addEmployee").className = "btn btn-small waves-effect waves-light blue";
             document.getElementById("updateEmployee").className += " disabled";
             document.getElementById("removeEmployee").className += " disabled";
         } else {
             document.getElementById("addEmployee").className += " disabled";
-            document.getElementById("updateEmployee").className = "btn btn-large waves-effect waves-light blue accent-3";
-            document.getElementById("removeEmployee").className = "btn btn-large waves-effect waves-light red accent-3";
+            document.getElementById("updateEmployee").className = "btn btn-small waves-effect waves-light green";
+            document.getElementById("removeEmployee").className = "btn btn-small waves-effect waves-light orange";
         }
     },
 
@@ -244,27 +216,21 @@ var ManagerEmployeeAll = React.createClass({
                                         onChange={this.handleUserChange}
                                         required />
                                 </div>
-                                <div className="input-field col m4 s4">
-                                    <select className="browser-default" name="phoneType" value={this.state.phoneType} onChange={this.handleUserChange} required>
-                                        <option value="mobile">Mobile</option>
-                                        <option value="work">Work mobile</option>
-                                    </select>
-                                </div>
                             </div>
                             <div className="row">
                                 <div className="col s4">
-                                    <button id="addEmployee" className="btn btn-large waves-effect waves-light green accent-3" type="submit" value="Submit">Add
+                                    <button id="addEmployee" className="btn btn-small waves-effect waves-light green accent-3" type="submit" value="Submit">Add
                                         <i className="material-icons right">person_add</i>
                                     </button>
                                 </div>
                                 <div className="col s4">
-                                    <a id="updateEmployee" className="btn btn-large waves-effect waves-light blue accent-3" onClick={this.handleUpdateForm}>Update
+                                    <a id="updateEmployee" className="btn btn-small waves-effect waves-light blue accent-3" onClick={this.handleUpdateForm}>Update
                                         <i className="material-icons right">edit</i>
                                     </a>
                                 </div>
                                 <div className="col s4">
-                                    <a id="removeEmployee" className="btn btn-large waves-effect waves-light red accent-3" onClick={this.handleRemoveForm}>Remove
-                                        <i className="material-icons right">person_outline</i>
+                                    <a id="removeEmployee" className="btn btn-small waves-effect waves-light red accent-3" onClick={this.handleRemoveForm}>Remove
+                                        <i className="material-icons right">delete</i>
                                     </a>
                                 </div>
                             </div>

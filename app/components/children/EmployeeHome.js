@@ -1,7 +1,7 @@
 var React = require("react");
 var helpers = require("../utils/helpers");
 var ScheduleView =  require("./ScheduleView");
-var AnnouncementsView =  require("./AnnouncementsView");
+// var AnnouncementsView =  require("./AnnouncementsView");
 
 var EmployeeHome = React.createClass({
     getInitialState: function() {

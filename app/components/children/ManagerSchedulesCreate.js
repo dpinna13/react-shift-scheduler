@@ -141,7 +141,7 @@ var ManagerSchedulesCreate = React.createClass({
                                                 </td>
                                                 <td>
                                                     <div className="schedule">
-                                                        <select className="browser-default" name="tuesday" value={schedules.tuesday} onChange={this.handleUserChange.bind(this, i)}>
+                                                        <select className="browser-default" name="wednesday" value={schedules.wednesday} onChange={this.handleUserChange.bind(this, i)}>
                                                           <option disabled defaultValue>Select shift</option>
                                                           <option value="Libero" defaultValue>Libero</option>
                                                           <option disabled>Feriali</option>
