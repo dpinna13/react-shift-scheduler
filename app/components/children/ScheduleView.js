@@ -48,7 +48,7 @@ var ScheduleView = React.createClass({
                           <li className="schedule">
                             <div className="row">
                               <div className="col s4 m6 l6">
-                                Monday:
+                                Luned&Igrave;:
                               </div>
                               <div className="col s4 m6 l6">
                                 {schedules.monday}
@@ -59,7 +59,7 @@ var ScheduleView = React.createClass({
                           <li className="schedule">
                             <div className="row">
                               <div className="col s4 m6 l6">
-                                Tuesday:
+                                Marted&Igrave;:
                               </div>
                                 <div className="col s4 m6 l6">
                                   {schedules.tuesday}
@@ -69,7 +69,7 @@ var ScheduleView = React.createClass({
                             <li className="schedule">
                               <div className="row">
                                 <div className="col s4 m6 l6">
-                                  Wednesday:
+                                  Mercoled&Igrave;:
                                   </div>
                                     <div className="col s4 m6 l6">
                                   {schedules.wednesday}
@@ -79,7 +79,7 @@ var ScheduleView = React.createClass({
                             <li className="schedule">
                               <div className="row">
                                 <div className="col s4 m6 l6">
-                                  Thursday:
+                                  Gioved&Igrave;:
                                 </div>
                                     <div className="col s4 m6 l6">
                                       {schedules.thursday}
@@ -89,7 +89,7 @@ var ScheduleView = React.createClass({
                             <li className="schedule">
                               <div className="row">
                                 <div className="col s4 m6 l6">
-                                  Friday:
+                                  Venerd&Igrave;:
                                 </div>
                                     <div className="col s6 m6 l6">
                                       {schedules.friday}
@@ -99,7 +99,7 @@ var ScheduleView = React.createClass({
                             <li className="schedule">
                               <div className="row">
                                 <div className="col s4 m6 l6">
-                                  Saturday:
+                                  Sabato:
                                 </div>
                                     <div className="col s6 m6 l6">
                                       {schedules.saturday}
@@ -109,7 +109,7 @@ var ScheduleView = React.createClass({
                             <li className="schedule">
                               <div className="row">
                                 <div className="col s4 m6 l6">
-                                  Sunday:
+                                  Domenica:
                                 </div>
                                     <div className="col s6 m6 l6">
                                       {schedules.sunday}
@@ -119,7 +119,7 @@ var ScheduleView = React.createClass({
                           </ul>
                         </div>
                         <div className="card-action">
-                          <a href="sms:">Send Text Message</a>
+                          <a href="sms:">Contatta Elisabetta via SMS</a>
                         </div>
                       </div>
                     </div>

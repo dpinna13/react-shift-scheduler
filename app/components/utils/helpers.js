@@ -39,7 +39,7 @@ var helper = {
     });
   },
 
-  addEmployee: function(firstName, lastName, email, phone, phoneType) {
+  addEmployee: function(firstName, lastName, email, phone) {
     return axios.post("/addEmployee", {
         firstName: firstName,
         lastName: lastName,
@@ -48,7 +48,7 @@ var helper = {
         phoneType: phoneType });
   },
 
-  updateEmployee: function(id, firstName, lastName, email, phone, phoneType) {
+  updateEmployee: function(id, firstName, lastName, email, phone) {
        return axios.put("/updateEmployee/" + id, {
            firstName: firstName,
            lastName: lastName,
