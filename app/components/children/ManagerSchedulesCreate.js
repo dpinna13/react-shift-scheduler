@@ -88,7 +88,7 @@ var ManagerSchedulesCreate = React.createClass({
                 <div className="row">
                     <div className="col m12" >
                         <div className="section">
-                            <h5>Schedule Editor</h5>
+                            <h5>Modifica Turni</h5>
                             <div className="row">
                                 <div className="col m12 grey" >
                                     <h6>Week 1</h6>
@@ -97,14 +97,14 @@ var ManagerSchedulesCreate = React.createClass({
                             <table className="highlight">
                                 <thead>
                                     <tr>
-                                        <th data-field="name">Name</th>
-                                        <th data-field="name">Monday</th>
-                                        <th data-field="name">Tuesday</th>
-                                        <th data-field="name">Wednesday</th>
-                                        <th data-field="name">Thursday</th>
-                                        <th data-field="name">Friday</th>
-                                        <th data-field="name">Satday</th>
-                                        <th data-field="name">Sunday</th>
+                                        <th data-field="name">Nome</th>
+                                        <th data-field="name">Luned&Igrave;</th>
+                                        <th data-field="name">Marted&Igrave;</th>
+                                        <th data-field="name">Mercoled&Igrave;</th>
+                                        <th data-field="name">Gioved&Igrave;</th>
+                                        <th data-field="name">Venerd&Igrave;</th>
+                                        <th data-field="name">Sabato</th>
+                                        <th data-field="name">Domenica</th>
                                     </tr>
                                 </thead>
 
